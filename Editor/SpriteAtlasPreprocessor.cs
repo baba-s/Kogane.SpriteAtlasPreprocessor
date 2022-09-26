@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using UnityEditor;
-using UnityEngine;
 using UnityEngine.U2D;
 
 namespace Kogane.Internal
@@ -24,8 +23,10 @@ namespace Kogane.Internal
             string[] movedFromAssetPaths
         )
         {
-            // バッチモードの場合は何もしません
-            if ( Application.isBatchMode ) return;
+            // Mac だと Unity Hub から起動した場合も
+            // Application.isBatchMode が true になってしまうためコメントアウト
+            // // バッチモードの場合は何もしません
+            // if ( Application.isBatchMode ) return;
 
             var preprocessorSettings = SpriteAtlasPreprocessorSettings.instance;
 
